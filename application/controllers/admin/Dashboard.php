@@ -31,7 +31,7 @@ class Dashboard extends CI_Controller {
         $ga=$this->input->post('ga');
         $ob=$this->input->post('ob');
         $penerima=$this->input->post('penerima');
-        $edited = $this->post_model->edit_dokumen($id,$pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security,$ga,$ob,$penerima);
+        $edited = $this->Post_model->edit_dokumen($id,$pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security,$ga,$ob,$penerima);
         
         if($edited){
             $this->session->set_flashdata('message', 'Data Berhasil Diedit');
