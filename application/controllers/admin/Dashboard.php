@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-        $data['data'] = $this->Post_model->view_all()();
+        $data['data'] = $this->Post_model->view_all();
         if( $this->input->post('keyword') ) {
             $data['data'] = $this->Post_model->cari();
         }
