@@ -28,7 +28,14 @@ class Auth extends CI_Controller {
                     $this->session->set_userdata('logged',TRUE);
                     $this->session->set_userdata('user',$email);
                     $id=$x['user_id'];
-                    if($x['user_level']=='admin'){ 
+                    if($x['user_level']=='master'){ 
+                        $name = $x['user_name'];
+                        $this->session->set_userdata('access','Master');
+                        $this->session->set_userdata('id',$id);
+                        $this->session->set_userdata('name',$name);
+                        redirect('master/dashboard');
+
+                    }else if($x['user_level']=='admin'){
                         $name = $x['user_name'];
                         $this->session->set_userdata('access','Admin');
                         $this->session->set_userdata('id',$id);

@@ -155,11 +155,10 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $no=0;
                                                 foreach($data as $dt){?>
                                             <tr>
                                                 <td>
-                                                    <?php echo ++$no; ?>
+                                                    <?php echo $dt['user_id']; ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $dt['user_name']; ?>

@@ -174,9 +174,9 @@
                                                 <a href="<?php echo base_url('Pdfview/prints/'.$tanggal_); ?>" target="_blank" class="form-control btn btn-info"><i
                                                 class="fas fa-print"></i> Cetak Rekap</a>
                                             </div>
-                                            <div class="col-md-2" style="margin-top: 10px;">
+                                            <!-- <div class="col-md-2" style="margin-top: 10px;">
                                                 <a href="<?php echo base_url('receipt/view_all'); ?>" class="form-control btn btn-info">All Data</a>
-                                            </div>
+                                            </div> -->
                                             <div class="col-md-3" style="margin-top: 10px;">
                                                 <form action="" method="post">
                                                     <div class="input-group">
