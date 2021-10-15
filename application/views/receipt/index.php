@@ -392,7 +392,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="id">Gambar</label>
-                                <input type="file" class="form-control" id="bukti_terima" name="bukti_terima">
+                                <input type="file" accept="image/*" class="form-control" id="bukti_terima" name="bukti_terima">
                             </div>
                             <!-- Modal footer -->
                             <div class="modal-footer">
