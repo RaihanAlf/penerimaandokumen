@@ -7,7 +7,7 @@ class User extends CI_Controller {
 		$this->load->library('form_validation');
         $this->load->model('User_model');
 		if($this->session->userdata('logged') !=TRUE){
-            $url=base_url('master');
+            $url=base_url('auth');
             redirect($url);
 		};
 		

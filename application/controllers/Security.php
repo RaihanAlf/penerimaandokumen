@@ -7,7 +7,7 @@ class Security extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Post_model');
         if($this->session->userdata('logged') !=TRUE){
-            $url=base_url('security');
+            $url=base_url('auth');
             redirect($url);
 		};
 	}
