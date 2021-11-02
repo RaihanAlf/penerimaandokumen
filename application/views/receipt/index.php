@@ -193,7 +193,7 @@
                                     <table class="table table-bordered" id="datatableSimple" width="100%" cellspacing="0" style="text-align: center">
                                         <thead>
                                             <tr>
-                                                <th>Option</th>
+                                                <th>Option<input type="checkbox" id="select_all"></th>
                                                 <th>Waktu</th>
                                                 <th>Pengirim</th>
                                                 <th>Kota Pengirim</th>
@@ -573,6 +573,8 @@
         <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
         <script src="<?php echo base_url('js/demo/datatables-demo.js');?>"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 
     </body>
@@ -623,6 +625,29 @@ $(document).ready(function(){
             });
         } else{
             alert('Tidak ada data yang dipilih');
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#select_all').on('click',function(){
+        if(this.checked){
+            $('.update_checkbox').each(function(){
+                this.checked = true;
+            });
+        }else{
+             $('.update_checkbox').each(function(){
+                this.checked = false;
+            });
+        }
+    });
+    
+    $('.update_checkbox').on('click',function(){
+        if($('.update_checkbox:checked').length == $('.update_checkbox').length){
+            $('#select_all').prop('checked',true);
+        }else{
+            $('#select_all').prop('checked',false);
         }
     });
 });
