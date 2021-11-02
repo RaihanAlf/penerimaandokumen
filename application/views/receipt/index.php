@@ -326,7 +326,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="id">Penerima</label>
-                                <input required="required" class="form-control" type="text" id="id" name="penerima" />
+                                <input required="required" class="form-control" type="text" id="penerima" name="penerima" />
                             </div>
                             <!-- Modal footer -->
                             <div class="modal-footer">
@@ -573,7 +573,7 @@
         <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
         <script src="<?php echo base_url('js/demo/datatables-demo.js');?>"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 
 
 
@@ -618,7 +618,7 @@ $(document).ready(function(){
                 success: function (response) {
                     var obj = JSON.parse(response);
                     if(obj.success == true) {
-                        alert("Data Berhasil diSimpan!");
+                        alert("Yakin Data Sudah Benar?");
                         location.reload();
                     }
                 },
