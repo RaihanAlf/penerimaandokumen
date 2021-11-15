@@ -32,8 +32,15 @@ class Post_model extends CI_Model{
         return $this->db->get('dokumen')->result_array();            
 	}
 
-    function simpan_dokumen($pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security){
-        $hasil=$this->db->query("INSERT INTO dokumen (pengirim,kota_pengirim,tujuan,jenis_barang,security) VALUES ('$pengirim','$kota_pengirim','$tujuan','$jenis_barang','$security')");
+    function simpan_dokumen($nomor_data,$pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security){
+        $hasil=$this->db->query("INSERT INTO dokumen (nomor_data,pengirim,kota_pengirim,tujuan,jenis_barang,security) VALUES ('$nomor_data','$pengirim','$kota_pengirim','$tujuan','$jenis_barang','$security')");
+        return $hasil;
+    }
+
+    function ambil_lastno() {
+        // $tgl = "2021-11-02";
+        $tgl = date("Y-m-d");
+        $hasil = $this->db->query("SELECT nomor_data FROM dokumen WHERE tanggal='$tgl' ORDER BY id DESC LIMIT 1");
         return $hasil;
     }
  

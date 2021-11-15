@@ -23,17 +23,28 @@ class Security extends CI_Controller {
 	}
 
 	function simpan_dokumen(){
+        $nomor_data= $this->input->post('nomor_data');
         $pengirim=$this->input->post('pengirim');
         $kota_pengirim=$this->input->post('kota_pengirim');
         $tujuan=$this->input->post('tujuan');
         $jenis_barang=$this->input->post('jenis_barang');
         $security=$this->input->post('security');
-        $saved = $this->Post_model->simpan_dokumen($pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security);
+        $saved = $this->Post_model->simpan_dokumen($nomor_data,$pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security);
         
         if ($saved){
             $this->session->set_flashdata('message', 'Data Berhasil Dibuat');
             redirect('security');
         }
+    }
+
+    public function minta_lastno(){
+        $getdata = $this->Post_model->ambil_lastno();
+        if(count($getdata->result()) == 0) {
+            $nomor_data = 1;
+        } else {
+            $nomor_data = $getdata->result()[0]->nomor_data + 1;
+        }
+        echo $nomor_data;
     }
 
     public function contact_us()
@@ -76,4 +87,6 @@ class Security extends CI_Controller {
 			redirect('security');
 		}  
     }
+
+
 }

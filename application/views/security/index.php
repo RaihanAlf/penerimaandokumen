@@ -69,7 +69,7 @@
                         <i class="fas fa-fw fa-comments"></i>
                         <span>Contact Us</span></a>
                 </li> -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('security/contact_us'); ?>">
                         <i class="fas fa-fw fa-comments"></i>
                         <span>Contact Us</span></a>
@@ -78,7 +78,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('auth/logout'); ?>">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         <span>Logout</span></a>
@@ -145,7 +145,11 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">List Data</h1>
-                            <a style="margin-bottom: 10px; color: white;" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_new"><i class="fa fa-plus"></i> Tambah Data</a>
+
+                            <!-- <a style="margin-bottom: 10px; color: white;" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_new">
+                                <i class="fa fa-plus"></i> Tambah Data</a> -->
+                            <a style="margin-bottom: 10px; color: white;" class="btn btn-primary" id="tambah_data" data-toggle="modal">
+                                <i class="fa fa-plus"></i> Tambah Data</a>
                         </div>
 
                         <!-- DataTales Example -->
@@ -232,6 +236,10 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form method="post" action="<?php echo base_url('security/simpan_dokumen') ?>">
+                            <input required="required" class="form-control" type="hidden" id="nomor_data" name="nomor_data" />
+                            <div class="form-group text-center" style="width: 80px; margin: auto;">
+                                <p id="nomor_data_judul" style="color: #949c00; font-size: 50px; font-weight: 600; border-style: solid; border-radius: 15px 15px;"><b>0</b></p>
+                            </div>
                             <div class="form-group">
                                 <label for="id">Pengirim</label>
                                 <input required="required" class="form-control" type="text" id="pengirim" name="pengirim" />
@@ -380,6 +388,23 @@
         <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
         <script src="<?php echo base_url('js/demo/datatables-demo.js');?>"></script>
+        <script>
+            $(document).ready(function(){
+                $('#tambah_data').click(function(){
+                    // alert("aaa");
+                    $.ajax({
+                        url:"<?php echo base_url('security/minta_lastno')?>",
+                        method:"POST",
+                        success: function (response) {  
+                            // console.log(response);
+                            $("#nomor_data").val(response);
+                            $("#nomor_data_judul").text(response);
+                            $('#modal_add_new').modal('show');
+                            
+                        },
+                    });
+                });
+            });
+        </script>
     </body>
-
 </html>

@@ -68,7 +68,7 @@
                         <i class="fas fa-fw fa-comments"></i>
                         <span>Contact Us</span></a>
                 </li> -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('book/contact_us'); ?>">
                         <i class="fas fa-fw fa-comments"></i>
                         <span>Contact Us</span></a>
@@ -77,7 +77,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('auth/logout'); ?>">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         <span>Logout</span></a>
