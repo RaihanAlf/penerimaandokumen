@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2021 at 03:39 AM
+-- Generation Time: Nov 17, 2021 at 04:33 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -67,33 +67,11 @@ CREATE TABLE `dokumen` (
 --
 
 INSERT INTO `dokumen` (`id`, `nomor_data`, `tanggal`, `waktu`, `pengirim`, `kota_pengirim`, `tujuan`, `jenis_barang`, `security`, `ga`, `ob`, `penerima`, `bukti_terima`) VALUES
-(18, 0, '2021-10-04', '09:42:15', 'Trio Banjarmasin', 'Banjarmasin', 'Rama', 'Dokumen', 'Angga Radit', 'Rara', 'Kean', 'Andi', 'f3b25a01df53dbb419e6b03a76a72d7a.jpeg'),
-(19, 0, '2021-10-04', '09:42:24', 'Trio Tanjung', 'Tanjung', 'Risa', 'Dokumen', 'Angga Radit', 'Zara', 'Eko', 'Asian', 'a906baf13c729640c74e185d19bd343d.jpg'),
-(20, 0, '2021-10-06', '09:42:36', 'Suzuki', 'Jakarta', 'Andi', 'Paket', 'Angga Radit', 'Rara', 'Eko', 'Asian', '10e157780a42e8c50bea24de05ba2467.jpeg'),
-(21, 0, '2021-10-01', '09:59:29', 'Delima Motor', 'Banjarmasin', 'Ali', 'Dokumen', 'Rahman', 'Rara', 'Eko', 'Andi', 'b11b620b4ca4202bfe2a878fc7617bab.jpeg'),
-(22, 0, '2021-10-04', '16:03:33', 'kasdas', 'wqet', 'asdas', 'Paket', 'Rahman', '', '', 'Yudi', '5025a4bedcb77815f996e0faf33c0623.jpeg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedback`
---
-
-CREATE TABLE `feedback` (
-  `id` varchar(55) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `message` varchar(2000) NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `create_at`) VALUES
-('615cf8b7463348.51326810', 'Kayn', 'kay@gmail.com', 'Z', '2021-10-06 01:15:35'),
-('615cf8c16bd5d4.92434990', 'Senna', 'senna@gmail.com', 'Y', '2021-10-06 01:15:45');
+(28, 1, '2021-11-02', '09:14:40', 'Trio Tanjung', 'Tanjung', 'Rama', 'Dokumen', 'Security', 'Receipt', 'Eko', 'Asian', '4b4a5b1701f2297c5f078c1e4a61b801.jpg'),
+(29, 2, '2021-11-02', '09:14:51', 'Trio Banjarmasin', 'Banjarmasin', 'Andi', 'Paket', 'Security', 'Receipt', 'Eko', 'Andi', '6ff028b69ff25df766ab830de1e5ae21.jpeg'),
+(30, 3, '2021-11-02', '09:15:02', 'Suzuki', 'Jakarta', 'Risa', 'Paket', 'Security', 'Receipt', 'Eko', '', ''),
+(31, 1, '2021-11-03', '09:15:22', 'Delima Motor', 'Banjarmasin', 'Ali', 'Dokumen', 'Security', 'Receipt', 'Eko', '', ''),
+(32, 2, '2021-11-03', '09:17:21', 'DITSY OFFICIAL', 'Tangerang', 'Andi', 'Dokumen', 'Security', 'Receipt', 'Eko', '', '');
 
 -- --------------------------------------------------------
 
@@ -139,12 +117,6 @@ ALTER TABLE `dokumen`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -164,7 +136,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `dokumen`
 --
 ALTER TABLE `dokumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`
