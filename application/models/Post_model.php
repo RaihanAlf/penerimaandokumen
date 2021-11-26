@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Makassar');
 class Post_model extends CI_Model{
 
     function view_all(){
@@ -33,7 +34,9 @@ class Post_model extends CI_Model{
 	}
 
     function simpan_dokumen($nomor_data,$pengirim,$kota_pengirim,$tujuan,$jenis_barang,$security){
-        $hasil=$this->db->query("INSERT INTO dokumen (nomor_data,pengirim,kota_pengirim,tujuan,jenis_barang,security) VALUES ('$nomor_data','$pengirim','$kota_pengirim','$tujuan','$jenis_barang','$security')");
+        $tanggal = date("Y-m-d");
+        $waktu = date("H:i:s");
+        $hasil=$this->db->query("INSERT INTO dokumen (nomor_data,tanggal,waktu,pengirim,kota_pengirim,tujuan,jenis_barang,security) VALUES ('$nomor_data','$tanggal','$waktu','$pengirim','$kota_pengirim','$tujuan','$jenis_barang','$security')");
         return $hasil;
     }
 

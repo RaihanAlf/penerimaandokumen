@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 04:33 AM
+-- Generation Time: Nov 26, 2021 at 03:39 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -38,7 +38,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `no_telp`, `email`) VALUES
-(1, 8647467, 'yudi@gmail.com');
+(1, 8647467, 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -49,8 +49,8 @@ INSERT INTO `contact` (`id`, `no_telp`, `email`) VALUES
 CREATE TABLE `dokumen` (
   `id` int(11) NOT NULL,
   `nomor_data` int(11) NOT NULL,
-  `tanggal` date NOT NULL DEFAULT current_timestamp(),
-  `waktu` time NOT NULL DEFAULT current_timestamp(),
+  `tanggal` date NOT NULL,
+  `waktu` time NOT NULL,
   `pengirim` varchar(50) NOT NULL,
   `kota_pengirim` varchar(50) NOT NULL,
   `tujuan` varchar(50) NOT NULL,
@@ -71,7 +71,8 @@ INSERT INTO `dokumen` (`id`, `nomor_data`, `tanggal`, `waktu`, `pengirim`, `kota
 (29, 2, '2021-11-02', '09:14:51', 'Trio Banjarmasin', 'Banjarmasin', 'Andi', 'Paket', 'Security', 'Receipt', 'Eko', 'Andi', '6ff028b69ff25df766ab830de1e5ae21.jpeg'),
 (30, 3, '2021-11-02', '09:15:02', 'Suzuki', 'Jakarta', 'Risa', 'Paket', 'Security', 'Receipt', 'Eko', '', ''),
 (31, 1, '2021-11-03', '09:15:22', 'Delima Motor', 'Banjarmasin', 'Ali', 'Dokumen', 'Security', 'Receipt', 'Eko', '', ''),
-(32, 2, '2021-11-03', '09:17:21', 'DITSY OFFICIAL', 'Tangerang', 'Andi', 'Dokumen', 'Security', 'Receipt', 'Eko', '', '');
+(32, 2, '2021-11-03', '09:17:21', 'DITSY OFFICIAL', 'Tangerang', 'Andi', 'Dokumen', 'Security', 'Receipt', 'Eko', '', ''),
+(38, 1, '2021-11-26', '10:32:03', 'Trio Banjarmasin', 'Tanjung', 'Andi', 'Dokumen', 'Security', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,7 @@ CREATE TABLE `user` (
   `user_password` varchar(50) NOT NULL,
   `user_level` enum('admin','security','receipt','book','master') NOT NULL,
   `user_status` enum('1','0') NOT NULL,
-  `create_at` date NOT NULL DEFAULT current_timestamp()
+  `create_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -136,13 +137,13 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `dokumen`
 --
 ALTER TABLE `dokumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

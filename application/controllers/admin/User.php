@@ -26,7 +26,8 @@ class User extends CI_Controller {
         $user_email=$this->input->post('user_email');
         $user_password=$this->input->post('user_password');
         $user_level=$this->input->post('user_level');
-        $user_status=$this->input->post('user_status');
+        $user_status= 1 ;
+        // $create_at=$this->input->post('create_at');
         $saved = $this->User_model->tambah_user($user_name,$user_email,$user_password,$user_level,$user_status);
         
         if ($saved){

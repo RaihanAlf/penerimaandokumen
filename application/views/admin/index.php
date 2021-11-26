@@ -57,7 +57,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?= site_url('admin/user')?>">
                         <i class="fas fa-fw fa-users"></i>
                         <span>User List</span></a>
@@ -71,7 +71,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('auth/logout'); ?>">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         <span>Logout</span></a>

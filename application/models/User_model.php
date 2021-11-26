@@ -8,7 +8,8 @@ class User_model extends CI_Model{
     }
 
     function tambah_user($user_name,$user_email,$user_password,$user_level,$user_status){
-        $hasil=$this->db->query("INSERT INTO user (user_name,user_email,user_password,user_level,user_status) VALUES ('$user_name','$user_email','$user_password','$user_level','$user_status')");
+        $create_at = date("Y-m-d");
+        $hasil=$this->db->query("INSERT INTO user (user_name,user_email,user_password,user_level,user_status,create_at) VALUES ('$user_name','$user_email','$user_password','$user_level','$user_status','$create_at')");
         return $hasil;
     }
 

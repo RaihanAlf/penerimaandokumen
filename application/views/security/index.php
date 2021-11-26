@@ -1,9 +1,15 @@
 <?php
+    date_default_timezone_set('Asia/Makassar');
     if(isset($_GET["tanggal"])){
         $tanggal = $_GET["tanggal"];
     } else {
         $tanggal = date("Y-m-d");
     }
+    // if(isset($_GET["waktu"])){
+    //     $waktu = $_GET["waktu"];
+    // } else {
+    //     $waktu = date("h:i:s a");
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -170,6 +176,7 @@
                                     <table class="table table-bordered" id="datatableSimple" width="100%" cellspacing="0" style="text-align: center">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
                                                 <th>Waktu</th>
                                                 <th>Pengirim</th>
                                                 <th>Kota Pengirim</th>
@@ -180,8 +187,10 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                                $no = 0;
                                                 foreach($data as $dt){?>
                                             <tr>
+                                                <td><?php echo ++$no; ?></td>
                                                 <td><?php echo $dt['waktu']; ?></td>
                                                 <td><?php echo $dt['pengirim']; ?></td>
                                                 <td><?php echo $dt['kota_pengirim']; ?></td>
@@ -236,10 +245,10 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form method="post" action="<?php echo base_url('security/simpan_dokumen') ?>">
-                            <input required="required" class="form-control" type="hidden" id="nomor_data" name="nomor_data" />
+                            <input required="required" class="form-control" type="hidden" id="nomor_data" name="nomor_data" />                            
                             <div class="form-group text-center" style="width: 80px; margin: auto;">
                                 <p id="nomor_data_judul" style="color: #949c00; font-size: 50px; font-weight: 600; border-style: solid; border-radius: 15px 15px;"><b>0</b></p>
-                            </div>
+                            </div>                           
                             <div class="form-group">
                                 <label for="id">Pengirim</label>
                                 <input required="required" class="form-control" type="text" id="pengirim" name="pengirim" />

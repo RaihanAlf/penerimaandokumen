@@ -55,7 +55,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?= site_url('admin/user')?>">
                         <i class="fas fa-fw fa-users"></i>
                         <span>User List</span></a>
@@ -69,7 +69,7 @@
                 <hr class="sidebar-divider">
 
                 <!-- Nav Item - Charts -->
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('auth/logout'); ?>">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         <span>Logout</span></a>
@@ -307,32 +307,33 @@
                             <div class="form-group">
                                 <label for="id">Nama</label>
                                 <input required="required" class="form-control" type="text" id="nama" name="user_name" />
+                                <!-- <input required="required" class="form-control" type="hidden" id="nama" name="create_at" value="<?php echo $tanggal; ?>"  readonly /> -->
                             </div>
 
                             <div class="form-group">
-                                        <label for="id">Email</label>
-                                        <input required="required" class="form-control" type="email" id="email" name="user_email" />
-                                    </div>
+                                <label for="id">Email</label>
+                                <input required="required" class="form-control" type="email" id="email" name="user_email" />
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="id">Password</label>
-                                        <input required="required" class="form-control" type="text" id="password" name="user_password" />
-                                    </div>
+                            <div class="form-group">
+                                <label for="id">Password</label>
+                                <input required="required" class="form-control" type="text" id="password" name="user_password" />
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="id">Level</label>
-                                    <div class="col-xs-8">
-                                        <select name="user_level" class="form-control" required>
-                                            <option value="">-PILIH-</option>
-                                            <option value="admin">Admin</option>
-                                            <option value="security">Security</option>
-                                            <option value="receipt">Receipt</option>
-                                            <option value="book">Book</option>
-                                        </select>
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="id">Status</label>
+                            <div class="form-group">
+                                <label for="id">Level</label>
+                            <div class="col-xs-8">
+                                <select name="user_level" class="form-control" required>
+                                    <option value="">-PILIH-</option>
+                                    <!-- <option value="admin">Admin</option> -->
+                                    <option value="security">Security</option>
+                                    <option value="receipt">Receipt</option>
+                                    <option value="book">Book</option>
+                                </select>
+                            </div>
+                            </div>
+                                    <!-- <div class="form-group">
+                                        <label for="id">Status</label>                    
                                     <div class="col-xs-8">
                                         <select name="user_status" class="form-control" required>
                                             <option value="">-PILIH-</option>
@@ -340,15 +341,14 @@
                                             <option value="0">0 (Tidak Aktif)</option>
                                         </select>
                                     </div>
-                                    </div>
-                            </div>
-                    
+                                    </div> -->
+                                    
                             <!-- Modal footer -->
                             <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit">Submit</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                             </div>
-                        </form>
+                        </form>                        
                     </div>
                 </div>
             </div>

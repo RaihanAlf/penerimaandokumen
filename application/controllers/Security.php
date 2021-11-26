@@ -24,6 +24,8 @@ class Security extends CI_Controller {
 
 	function simpan_dokumen(){
         $nomor_data= $this->input->post('nomor_data');
+        // $tanggal= $this->input->post('tanggal');
+        // $waktu= $this->input->post('waktu');
         $pengirim=$this->input->post('pengirim');
         $kota_pengirim=$this->input->post('kota_pengirim');
         $tujuan=$this->input->post('tujuan');
